@@ -4,25 +4,27 @@
 # This file follows the schema defined in metadata.schema.json
 
 # Basic Information
-title: Title
-subtitle: Subtitle
-author: Author Name
+title: CS50 - найкращий онлайн курс для початківців від Гарварда?
+subtitle: Універсальний посібник для початківців
+author: Сергій Городілов
 
 # Content Description
 keywords:
-  - "keyword1"
-  - "keyword2"
-  - "keyword3"
-subject: Subject
-category: Category  # Research Article, Review, Case Study etc.
+  - review
+  - cs50
+  - programming
+  - beginner
+  - guide
+subject: CS50 - Introduction to Computer Science
+category: Review
 
 # Document Settings
 lang: uk  # Language code: en, uk
-#dir: ltr # Text direction: ltr, rtl
+dir: ltr # Text direction: ltr, rtl
 
 # Formatting (especially relevant for PDF output)
-mainfont: "Liberation Serif"
-monofont: "Liberation Mono"
+mainfont: DejaVu Serif
+monofont: DejaVu Sans Mono
 fontsize: "12pt"
 documentclass: "article"
 geometry:
@@ -38,7 +40,7 @@ toc-depth: 3  # Depth of headings in table of contents
 
 # Citation and References
 bibliography: references/bibliography.bib
-csl: csl/ieee.csl  # Citation style
+#csl: csl/ieee.csl  # Citation style
 #reference-section-title: References
 link-citations: true  # Hyperlink citations to bibliography entries
 link-bibliography: true  # Hyperlink bibliography entries to citations

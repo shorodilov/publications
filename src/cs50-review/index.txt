@@ -1,9 +1,11 @@
-..  The abstract is placed here rather than in metadata.yaml
-    for better reliability and visibility in the document structure.
-
+:version: draft
 :abstract: |
-  This is the abstract of the article. It should provide a concise summary
-  of the article's content, main arguments, methodology, and findings.
-  The abstract should be between 150-250 words.
+  Ця стаття пропонує критичний погляд без прикрас на популярний онлайн-курс
+  вступу до програмування CS50 від університету Гарварда. У ній розглядаються
+  зміст курсу та методика викладання, а також наводяться характеристики
+  особливостей його подачі та мета навчання. Досліджується чи є обґрунтованою
+  репутація CS50 як найкращого вступного курсу для початківців, аналізуються
+  переваги та недоліки. Стаття має на меті допомогти читачам сформувати власну
+  думку щодо доцільності вивчення CS50 для старту кар'єри в IT-сфері.
 
-..  Your article content begins below this line
+.. |tm| unicode:: U+2122 .. TRADEMARK SYMBOL
