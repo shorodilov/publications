@@ -1,0 +1,50 @@
+# metadata.yaml
+#
+# Article Metadata
+# This file follows the schema defined in metadata.schema.json
+
+# Basic Information
+title: Title
+subtitle: Subtitle
+author: Author Name
+
+# Content Description
+keywords:
+  - "keyword1"
+  - "keyword2"
+  - "keyword3"
+subject: Subject
+category: Category  # Research Article, Review, Case Study etc.
+
+# Document Settings
+lang: uk  # Language code: en, uk
+#dir: ltr # Text direction: ltr, rtl
+
+# Formatting (especially relevant for PDF output)
+mainfont: "Liberation Serif"
+monofont: "Liberation Mono"
+fontsize: "12pt"
+documentclass: "article"
+geometry:
+  - "margin=1in"
+  - "a4paper"
+papersize: "a4"
+
+# Document Structure
+toc: true  # Include table of contents
+toc-depth: 3  # Depth of headings in table of contents
+#lof: true  # Include the list of figures
+#lot: true  # Include the list of tables
+
+# Citation and References
+bibliography: references/bibliography.bib
+csl: csl/ieee.csl  # Citation style
+#reference-section-title: References
+link-citations: true  # Hyperlink citations to bibliography entries
+link-bibliography: true  # Hyperlink bibliography entries to citations
+# nocite: "@*"  # Include all bibliography entries even if not cited
+
+# Acknowledgments
+# thanks: |
+#   Acknowledgments and thanks go here. This could include funding
+#   information, assistance received, or other forms of support.
