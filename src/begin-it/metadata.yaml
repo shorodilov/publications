@@ -3,26 +3,30 @@
 # Article Metadata
 # This file follows the schema defined in metadata.schema.json
 
+# Source:
+repository: https://github.com/shorodilov/article-02.git
+
 # Basic Information
-title: Title
-subtitle: Subtitle
-author: Author Name
+title: Ввійти в IT
+subtitle: Універсальний посібник для початківців
+author: Сергій Городілов
 
 # Content Description
 keywords:
-  - "keyword1"
-  - "keyword2"
-  - "keyword3"
-subject: Subject
-category: Category  # Research Article, Review, Case Study etc.
+  - developer
+  - programming
+  - beginner
+  - guide
+subject: Practical advice for beginners
+category: Guide
 
 # Document Settings
 lang: uk  # Language code: en, uk
-#dir: ltr # Text direction: ltr, rtl
+dir: ltr # Text direction: ltr, rtl
 
 # Formatting (especially relevant for PDF output)
-mainfont: "Liberation Serif"
-monofont: "Liberation Mono"
+mainfont: DejaVu Serif
+monofont: DejaVu Sans Mono
 fontsize: "12pt"
 documentclass: "article"
 geometry:
@@ -39,10 +43,10 @@ toc-depth: 3  # Depth of headings in table of contents
 # Citation and References
 bibliography: references/bibliography.bib
 csl: csl/ieee.csl  # Citation style
-#reference-section-title: References
+reference-section-title: Посилання
 link-citations: true  # Hyperlink citations to bibliography entries
 link-bibliography: true  # Hyperlink bibliography entries to citations
-# nocite: "@*"  # Include all bibliography entries even if not cited
+nocite: "@*"  # Include all bibliography entries even if not cited
 
 # Acknowledgments
 # thanks: |
