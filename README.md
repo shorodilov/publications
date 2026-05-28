@@ -15,25 +15,32 @@ Repository Structure
 ---
 
 ```mermaid
+---
+config:
+    themeVariables:
+        treeView:
+            labelColor: "red"
+            lineColor: "green"
+---
 treeView-beta
-    docs
-        CODE_OF_CONDUCT.md
-        CONTRIBUTING.md
-        SUPPORT.md
-    src
-        <pub-id>
-            [.ai]
-                xx-instruction.md
-            [section]
-                xx-sectiontitle.*
-            index.*
-            metadata.yaml
-        metadata.schema.json
-        metadata.yaml
-    .editorconfig
-    .gitignore
-    AGENTS.md
-    README.md
+    "docs/"
+        "CODE_OF_CONDUCT.md"
+        "CONTRIBUTING.md"
+        "SUPPORT.md"
+    "src/"
+        "<pub-id>/"
+            "[.ai/]"
+                "xx-instruction.md"
+            "[section/]"
+                "xx-sectiontitle.*"
+            "index.*"
+            "metadata.yaml"
+        "metadata.schema.json"
+        "metadata.yaml"
+    ".editorconfig"
+    ".gitignore"
+    "AGENTS.md"
+    "README.md"
 ```
 
 ### Contents Description
@@ -50,17 +57,17 @@ treeView-beta
 **src/metadata.schema.json**
 : Metadata file schema.
 
-**src/<pub-id>**
+**src/\<pub-id\>**
 : A single publication directory. The directory name serves as publication identifier (`pub-id`).
 
-**src/<pub-id>/index**
+**src/\<pub-id\>/index**
 : A publication entry-point (master file).
 It may contain the full publication text directly or assemble the publication
 from separate section files, such as `section/xx-sectiontitle.*`.
 The format of the `index.*` file is defined by its extension.
 Refer to [`pandoc documentation`](https://pandoc.org/MANUAL.html#option--from) to see supported formats.
 
-**src/<pub-id>/metadata.yaml**
+**src/\<pub-id\>/metadata.yaml**
 : A publication metadata file. Commonly contains `title`, `subtitle`, and `date` values,
 and other publication specific metadata.
 
