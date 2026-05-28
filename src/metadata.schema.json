@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metadata.schema.json",
+  "title": "Pandoc Metadata File Schema",
+  "$comment": "https://pandoc.org/MANUAL.html",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "pagetitle": {
+      "description": "The page title in HTML; equal to title by default",
+      "type": "string"
+    },
+    "author": {
+      "description": "The document author(s)",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/author"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/author"
+          }
+        }
+      ]
+    },
+    "date": {
+      "description": "The document's publication date",
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "abstract": {
+      "type": "string"
+    },
+    "abstract-title": {
+      "type": "string"
+    },
+    "keywords": {
+      "description": "The list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "subject": {
+      "type": "string"
+    },
+    "description": {
+      "description": "Document description",
+      "type": "string"
+    },
+    "category": {
+      "description": "Document category",
+      "type": "string"
+    },
+    "lang": {
+      "description": "Identifies the main language of the document using IETF language tags",
+      "examples": [ "en", "en-GB", "uk", "uk-UA" ],
+      "type": "string"
+    },
+    "dir": {
+      "description": "The base script direction",
+      "enum": [ "ltr", "rtl" ]
+    },
+    "classoption": {
+      "description": "Option for document class, e.g. oneside",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "documentclass": {
+      "enum": [
+        "article",
+        "book",
+        "report",
+        "scrartcl",
+        "scrbook",
+        "scrreprt",
+        "memoir"
+      ]
+    },
+    "geometry": {
+      "description": "Option for `geometry` package",
+      "examples": [
+        [ "margin=1in" ],
+        [ "top=30mm", "left=20mm" ],
+        [ "heightrounded" ]
+      ],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hyperrefoptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "indent": {
+      "type": "boolean"
+    },
+    "linestretch": {
+      "type": "number"
+    },
+    "margin-left": {
+      "description": "Sets margin if `geometry` is not used",
+      "$ref": "#/$defs/margin"
+    },
+    "margin-right": {
+      "description": "Sets margin if `geometry` is not used",
+      "$ref": "#/$defs/margin"
+    },
+    "margin-top": {
+      "description": "Sets margin if `geometry` is not used",
+      "$ref": "#/$defs/margin"
+    },
+    "margin-bottom": {
+      "description": "Sets margin if `geometry` is not used",
+      "$ref": "#/$defs/margin"
+    },
+    "pagestyle": {
+      "enum": [ "plain", "empty", "headings" ]
+    },
+    "papersize": {
+      "description": "Paper size",
+      "examples": [ "letter", "a4" ],
+      "type": "string"
+    },
+    "secnumdepth": {
+      "description": "numbering depth for sections",
+      "type": "integer"
+    },
+    "csquotes": {
+      "type": "boolean"
+    },
+    "csquotesoptions": {
+      "description": "Options to use with `csquotes` package",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "babeloptions": {
+      "description": "Options to pass to the babel package",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fontenc": {
+      "description": "Allows font encoding to be specified through `fontenc` package",
+      "examples": [ "T1", "T2A", "T2B", "T3" ],
+      "type": "string"
+    },
+    "fontfamily": {
+      "type": "string"
+    },
+    "fontfamilyoptions": {
+      "description": "Options for package used as `fontfamily`",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fontsize": {
+      "description": "Font size for body text",
+      "examples": [ "10pt", "11pt", "12pt" ],
+      "type": "string"
+    },
+    "mainfont": {
+      "$ref": "#/$defs/font"
+    },
+    "sansfont": {
+      "$ref": "#/$defs/font"
+    },
+    "monofont": {
+      "$ref": "#/$defs/font"
+    },
+    "mathfont": {
+      "$ref": "#/$defs/font"
+    },
+    "CJKmainfont": {
+      "$ref": "#/$defs/font"
+    },
+    "CJKsansfont": {
+      "$ref": "#/$defs/font"
+    },
+    "CJKmonofont": {
+      "$ref": "#/$defs/font"
+    },
+    "mainfontoptions": {
+      "$ref": "#/$defs/font-options"
+    },
+    "sansfontoptions": {
+      "$ref": "#/$defs/font-options"
+    },
+    "monofontoptions": {
+      "$ref": "#/$defs/font-options"
+    },
+    "mathfontoptions": {
+      "$ref": "#/$defs/font-options"
+    },
+    "CJKoptions": {
+      "$ref": "#/$defs/font-options"
+    },
+    "luatexjapresetoptions": {
+      "$ref": "#/$defs/font-options"
+    },
+    "mainfontfallback": {
+      "$ref": "#/$defs/font-list"
+    },
+    "sansfontfallback": {
+      "$ref": "#/$defs/font-list"
+    },
+    "monofontfallback": {
+      "$ref": "#/$defs/font-list"
+    },
+    "babelfonts": {
+      "$ref": "#/$defs/font-map"
+    },
+    "microtypeoptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lof": {
+      "description": "List of figures",
+      "type": "boolean"
+    },
+    "lot": {
+      "description": "List of tables",
+      "type": "boolean"
+    },
+    "thanks": {
+      "type": "string"
+    },
+    "toc": {
+      "type": "boolean"
+    },
+    "toc-depth": {
+      "type": "integer"
+    },
+    "biblatexoptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "biblio-style": {
+      "type": "string"
+    },
+    "biblio-title": {
+      "type": "string"
+    },
+    "bibliography": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "natbiboptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "author": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$comment": "author object requires custom template",
+          "type": "object",
+          "required": [ "name" ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "affiliation": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "margin": {
+      "type": "string"
+    },
+    "font": {
+      "type": "string"
+    },
+    "font-list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "font-map": {
+      "examples": [
+        {
+          "chinese-hant": "Noto Serif CJK TC",
+          "ukrainian": "Noto Serif"
+        }
+      ],
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "font-options": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  }
+}
