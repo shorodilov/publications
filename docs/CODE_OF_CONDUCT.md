@@ -10,6 +10,26 @@ Everyone who participates in this repository is expected to help keep the
 space focused on the work: documents, schemas, examples, issues, review,
 and improvements.
 
+## Statement on War in Ukraine
+
+This project recognizes Russia's war against Ukraine as a real context
+that affects maintainers, contributors, readers, and the wider community
+around this repository.
+
+Project spaces must not be used to deny, justify, minimize, or promote
+aggression against Ukraine; spread war propaganda; dehumanize Ukrainians
+or any other group; celebrate attacks on civilians; or pressure
+maintainers into unrelated "both sides" debates.
+
+Participation is not restricted by nationality, language, or place of
+residence. Contributors are expected to respect this boundary, keep
+discussion focused on the repository, and avoid turning issues or pull
+requests into political arguments.
+
+This statement is part of the repository's safety and moderation policy.
+Maintainers may remove comments, close discussions, or block participants
+when this boundary is violated.
+
 ## Expected behavior
 
 Participants are expected to:
