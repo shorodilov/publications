@@ -14,6 +14,9 @@ Every publication is stored as a separate unit under `src/<pub-id>`.
 Repository Structure
 ---
 
+<details>
+<summary>Repository Structure: Tree View</summary>
+
 ```mermaid
 ---
 config:
@@ -42,6 +45,7 @@ treeView-beta
     "AGENTS.md"
     "README.md"
 ```
+</details>
 
 ### Contents Description
 
