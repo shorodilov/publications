@@ -286,10 +286,7 @@
       "type": "string"
     },
     "font-list": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "font-map": {
       "examples": [
