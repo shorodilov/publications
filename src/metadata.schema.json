@@ -16,12 +16,12 @@
       "description": "The document author(s)",
       "oneOf": [
         {
-          "$ref": "#/$defs/author"
+          "$ref": "#/$defs/person"
         },
         {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/author"
+            "$ref": "#/$defs/person"
           }
         }
       ]
@@ -280,7 +280,7 @@
     }
   },
   "$defs": {
-    "author": {
+    "person": {
       "oneOf": [
         {
           "type": "string"
