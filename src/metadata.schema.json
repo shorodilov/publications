@@ -14,17 +14,7 @@
     },
     "author": {
       "description": "The document author(s)",
-      "oneOf": [
-        {
-          "$ref": "#/$defs/person"
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/person"
-          }
-        }
-      ]
+      "$ref": "#/$defs/type-person-or-list-person"
     },
     "date": {
       "description": "The document's publication date",
@@ -41,10 +31,7 @@
     },
     "keywords": {
       "description": "The list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "subject": {
       "type": "string"
@@ -68,10 +55,7 @@
     },
     "classoption": {
       "description": "Option for document class, e.g. oneside",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "documentclass": {
       "enum": [
@@ -91,16 +75,10 @@
         [ "top=30mm", "left=20mm" ],
         [ "heightrounded" ]
       ],
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "hyperrefoptions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "indent": {
       "type": "boolean"
@@ -141,17 +119,11 @@
     },
     "csquotesoptions": {
       "description": "Options to use with `csquotes` package",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "babeloptions": {
       "description": "Options to pass to the babel package",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "fontenc": {
       "description": "Allows font encoding to be specified through `fontenc` package",
@@ -163,10 +135,7 @@
     },
     "fontfamilyoptions": {
       "description": "Options for package used as `fontfamily`",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "fontsize": {
       "description": "Font size for body text",
@@ -225,10 +194,7 @@
       "$ref": "#/$defs/font-map"
     },
     "microtypeoptions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "lof": {
       "description": "List of figures",
@@ -248,10 +214,7 @@
       "type": "integer"
     },
     "biblatexoptions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/type-list-str"
     },
     "biblio-style": {
       "type": "string"
@@ -260,26 +223,42 @@
       "type": "string"
     },
     "bibliography": {
+      "$ref": "#/$defs/type-str-or-list-str"
+    },
+    "natbiboptions": {
+      "$ref": "#/$defs/type-list-str"
+    }
+  },
+  "$defs": {
+    "type-list-str": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "type-str-or-list-str": {
       "oneOf": [
         {
           "type": "string"
         },
         {
+          "$ref": "#/$defs/type-list-str"
+        }
+      ]
+    },
+    "type-person-or-list-person": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/person"
+        },
+        {
           "type": "array",
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/person"
           }
         }
       ]
     },
-    "natbiboptions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
-  },
-  "$defs": {
     "person": {
       "oneOf": [
         {
