@@ -1,0 +1,65 @@
+# .github/ISSUE_TEMPLATE/2-schema-or-build-problem.yml
+name: Schema or build problem
+description: Report a metadata schema, validation, conversion, or build workflow issue.
+title: "fix: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for issues that affect validation, generated output,
+        publication conversion, or repository automation.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Metadata schema
+        - Validation example
+        - Build or conversion workflow
+        - Generated output
+        - Repository automation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Affected file or command
+      placeholder: "metadata.schema.json, examples/..., make ..., pandoc ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Provide the smallest input, command, or example that reproduces the issue.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Add logs, screenshots, rendered output, or related issues if useful.
+    validations:
+      required: false
