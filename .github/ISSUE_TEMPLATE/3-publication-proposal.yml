@@ -1,0 +1,49 @@
+# .github/ISSUE_TEMPLATE/3-publication-proposal.yml
+name: Publication proposal
+description: Propose a new article, example, section, or larger documentation change.
+title: "docs: propose "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template before starting larger content changes.
+
+  - type: input
+    id: title
+    attributes:
+      label: Proposed title or topic
+      placeholder: "Short working title"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be added or changed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this useful for the repository or readers?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed scope
+      description: Which files, sections, examples, or schemas may be affected?
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks or open questions
+      description: What needs clarification before implementation?
+    validations:
+      required: false
