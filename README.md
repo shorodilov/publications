@@ -112,11 +112,11 @@ and other publication specific metadata.
 Community and Contribution Docs
 ---
 
-- Use `docs/CONTRIBUTING.md` before opening a pull request or proposing a larger change.
-- Use `docs/CODE_OF_CONDUCT.md` for participation and moderation expectations.
-- Use `docs/SUPPORT.md` for repository support questions.
-- Use `docs/SECURITY.md` for sensitive security reports.
-- Use `docs/COMMIT_MESSAGE.md` when preparing commit messages.
+- Use [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) before opening a pull request or proposing a larger change.
+- Use [docs/CODE_OF_CONDUCT.md](docs/CODE_OF_CONDUCT.md) for participation and moderation expectations.
+- Use [docs/SUPPORT.md](docs/SUPPORT.md) for repository support questions.
+- Use [docs/SECURITY.md](docs/SECURITY.md) for sensitive security reports.
+- Use [docs/COMMIT_MESSAGE.md](docs/COMMIT_MESSAGE.md) when preparing commit messages.
 
 Metadata Resolution
 ---
