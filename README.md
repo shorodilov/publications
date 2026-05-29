@@ -26,9 +26,18 @@ config:
             lineColor: "green"
 ---
 treeView-beta
+    ".github/"
+        "ISSUE_TEMPLATE/"
+            "1-content-correction.yml"
+            "2-schema-or-build-problem.yml"
+            "3-publication-proposal.yml"
+            "config.yml"
+        "PULL_REQUEST_TEMPLATE.md"
     "docs/"
         "CODE_OF_CONDUCT.md"
+        "COMMIT_MESSAGE.md"
         "CONTRIBUTING.md"
+        "SECURITY.md"
         "SUPPORT.md"
     "src/"
         "<pub-id>/"
@@ -43,17 +52,42 @@ treeView-beta
     ".editorconfig"
     ".gitignore"
     "AGENTS.md"
+    "LICENSE"
     "README.md"
 ```
 </details>
 
 ### Contents Description
 
+**.github/ISSUE_TEMPLATE/**
+: GitHub issue forms for content corrections, schema or build problems, and publication proposals.
+
+**.github/PULL_REQUEST_TEMPLATE.md**
+: GitHub pull request checklist for proposed repository changes.
+
 **AGENTS.md**
 : General guidelines for AI agents and tools.
 
 **.editorconfig**
 : Style guides file.
+
+**docs/CODE_OF_CONDUCT.md**
+: Contributor conduct and moderation expectations.
+
+**docs/COMMIT_MESSAGE.md**
+: Commit message format and convention guidance.
+
+**docs/CONTRIBUTING.md**
+: Contribution scope, review expectations, and repository conventions.
+
+**docs/SECURITY.md**
+: Security reporting scope and vulnerability disclosure guidance.
+
+**docs/SUPPORT.md**
+: Support scope and guidance for asking useful repository questions.
+
+**LICENSE**
+: Repository license terms.
 
 **src/metadata.yaml**
 : Shared metadata file. This file is loaded when building any publication from sources.
@@ -74,6 +108,15 @@ Refer to [`pandoc documentation`](https://pandoc.org/MANUAL.html#option--from) t
 **src/\<pub-id\>/metadata.yaml**
 : A publication metadata file. Commonly contains `title`, `subtitle`, and `date` values,
 and other publication specific metadata.
+
+Community and Contribution Docs
+---
+
+- Use `docs/CONTRIBUTING.md` before opening a pull request or proposing a larger change.
+- Use `docs/CODE_OF_CONDUCT.md` for participation and moderation expectations.
+- Use `docs/SUPPORT.md` for repository support questions.
+- Use `docs/SECURITY.md` for sensitive security reports.
+- Use `docs/COMMIT_MESSAGE.md` when preparing commit messages.
 
 Metadata Resolution
 ---
