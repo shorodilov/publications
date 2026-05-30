@@ -1,0 +1,51 @@
+# metadata.yaml
+# Article Metadata
+# This file follows the schema defined in metadata.schema.json
+# Source: repository: https://github.com/shorodilov/article-02.git
+
+# Basic Information
+title: Ввійти в IT
+subtitle: Універсальний посібник для початківців
+author: Сергій Городілов
+
+# Content Description
+keywords:
+  - developer
+  - programming
+  - beginner
+  - guide
+subject: Practical advice for beginners
+category: Guide
+
+# Document Settings
+lang: uk # Language code: en, uk
+dir: ltr # Text direction: ltr, rtl
+
+# Formatting (especially relevant for PDF output)
+mainfont: DejaVu Serif
+monofont: DejaVu Sans Mono
+fontsize: "12pt"
+documentclass: "article"
+geometry:
+  - "margin=1in"
+  - "a4paper"
+papersize: "a4"
+
+# Document Structure
+toc: true # Include table of contents
+toc-depth: 3 # Depth of headings in table of contents
+#lof: true # Include the list of figures
+#lot: true # Include the list of tables
+
+# Citation and References
+bibliography: references/bibliography.bib
+csl: csl/ieee.csl # Citation style
+reference-section-title: Посилання
+link-citations: true # Hyperlink citations to bibliography entries
+link-bibliography: true # Hyperlink bibliography entries to citations
+nocite: "@*" # Include all bibliography entries even if not cited
+
+# Acknowledgments
+# thanks: |
+# Acknowledgments and thanks go here.
+# This could include funding information, assistance received, or other forms of support.
