@@ -13,8 +13,6 @@ tmp/
 ### IDE configuration
 .vscode/
 .idea/*
-# include inspection profiles and files scopes
-!.idea/inspectionProfiles
-!.idea/inspectionProfiles/**
+# include shared settings
 !.idea/scopes
 !.idea/scopes/**
