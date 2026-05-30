@@ -4,8 +4,8 @@
 # This file follows the schema defined in metadata.schema.json
 
 # Source:
-repository: https://github.com/shorodilov/article-01.git
-version: 1.0
+# repository: https://github.com/shorodilov/publications.git
+# version: 1.0
 date: 2025-05-13
 
 # Basic Information
@@ -44,8 +44,8 @@ toc-depth: 3  # Depth of headings in table of contents
 #lot: true  # Include the list of tables
 
 # Citation and References
-bibliography: references/bibliography.bib
-csl: csl/ieee.csl  # Citation style
+bibliography: refs.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/refs/heads/master/ieee.csl
 reference-section-title: Посилання
 link-citations: true  # Hyperlink citations to bibliography entries
 link-bibliography: true  # Hyperlink bibliography entries to citations
