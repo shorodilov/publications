@@ -5,10 +5,10 @@ tmp/
 ### Python virtual environment
 # while the article project does not require venv,
 # it *may be* useful to have one to support IDE features.
-/.venv/
-/venv/
-/.env/
-/env/
+.venv/
+venv/
+.env/
+env/
 
 ### IDE configuration
 .vscode/
