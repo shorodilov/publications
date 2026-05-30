@@ -42,7 +42,7 @@ toc-depth: 3  # Depth of headings in table of contents
 
 # Citation and References
 bibliography: refs.bib
-csl: https://raw.githubusercontent.com/citation-style-language/styles/refs/heads/master/ieee.csl
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/ieee.csl
 reference-section-title: Посилання
 link-citations: true  # Hyperlink citations to bibliography entries
 link-bibliography: true  # Hyperlink bibliography entries to citations
