@@ -46,9 +46,9 @@ treeView-beta
             "[section/]"
                 "xx-sectiontitle.*"
             "index.*"
-            "metadata.yaml"
+            "[metadata.json]"
+        "metadata.json"
         "metadata.schema.json"
-        "metadata.yaml"
     ".editorconfig"
     ".gitignore"
     "AGENTS.md"
@@ -89,7 +89,7 @@ treeView-beta
 **LICENSE**
 : Repository license terms.
 
-**src/metadata.yaml**
+**src/metadata.json**
 : Shared metadata file. This file is loaded when building any publication from sources.
 
 **src/metadata.schema.json**
@@ -105,9 +105,12 @@ from separate section files, such as `section/xx-sectiontitle.*`.
 The format of the `index.*` file is defined by its extension.
 Refer to [`pandoc documentation`](https://pandoc.org/MANUAL.html#option--from) to see supported formats.
 
-**src/\<pub-id\>/metadata.yaml**
-: A publication metadata file. Commonly contains `title`, `subtitle`, and `date` values,
-and other publication specific metadata.
+**src/\<pub-id\>/index.***
+: The preferred location for publication-specific metadata, using an entry-point YAML metadata block.
+Commonly contains `title`, `subtitle`, `date`, bibliography, and other publication-specific values.
+
+**src/\<pub-id\>/metadata.json**
+: Optional publication metadata file for cases where keeping separate publication-specific metadata is clearer.
 
 Community and Contribution Docs
 ---
@@ -121,13 +124,15 @@ Community and Contribution Docs
 Metadata Resolution
 ---
 
-Publication metadata is resolved from two levels:
+Publication metadata is resolved from these sources:
 
-1. `src/metadata.yaml`
+1. `src/metadata.json`
    Shared metadata used as defaults for all publications.
 
-2. `src/<pub-id>/metadata.yaml`
-   Publication-specific metadata.
+2. `src/<pub-id>/index.*`
+   Publication-specific metadata in an entry-point YAML metadata block.
 
-When the same key exists in both files, the publication-level value from
-`src/<pub-id>/metadata.yaml` takes precedence.
+3. `src/<pub-id>/metadata.json`
+   Optional publication-specific metadata for cases where a separate file is clearer.
+
+When the same key exists at more than one level, the publication-level value takes precedence.

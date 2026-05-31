@@ -1,4 +1,19 @@
-:version: 1.0-rc1
+---
+# Source:
+# repository: https://github.com/shorodilov/publications.git
+title: Ввійти в IT
+subtitle: Універсальний посібник для початківців
+author: Сергій Городілов
+version: 1.0-rc1
+keywords:
+  - developer
+  - programming
+  - beginner
+  - guide
+subject: Practical advice for beginners
+category: Guide
+bibliography: refs.bib
+---
 
 ********
 Введення
