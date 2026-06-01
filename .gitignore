@@ -16,3 +16,7 @@ env/
 # include shared settings
 !.idea/scopes
 !.idea/scopes/**
+
+### Build artifacts
+buils/
+dist/
