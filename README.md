@@ -46,9 +46,8 @@ treeView-beta
             "[section/]"
                 "xx-sectiontitle.*"
             "index.*"
-            "metadata.yaml"
         "metadata.schema.json"
-        "metadata.yaml"
+        "metadata.json"
     ".editorconfig"
     ".gitignore"
     "AGENTS.md"
@@ -89,8 +88,8 @@ treeView-beta
 **LICENSE**
 : Repository license terms.
 
-**src/metadata.yaml**
-: Shared metadata file. This file is loaded when building any publication from sources.
+**src/metadata.json**
+: Shared metadata defaults file. This file is JSON so it can be queried directly with tools like `jq`.
 
 **src/metadata.schema.json**
 : Metadata file schema.
@@ -105,9 +104,10 @@ from separate section files, such as `section/xx-sectiontitle.*`.
 The format of the `index.*` file is defined by its extension.
 Refer to [`pandoc documentation`](https://pandoc.org/MANUAL.html#option--from) to see supported formats.
 
-**src/\<pub-id\>/metadata.yaml**
-: A publication metadata file. Commonly contains `title`, `subtitle`, and `date` values,
-and other publication specific metadata.
+Publication-specific metadata should normally live in the entry-point metadata
+block at the top of `src/<pub-id>/index.*`. A separate
+`src/<pub-id>/metadata.json` file is optional when an embedded metadata block is
+not practical.
 
 Community and Contribution Docs
 ---
@@ -123,11 +123,13 @@ Metadata Resolution
 
 Publication metadata is resolved from two levels:
 
-1. `src/metadata.yaml`
+1. `src/metadata.json`
    Shared metadata used as defaults for all publications.
 
-2. `src/<pub-id>/metadata.yaml`
-   Publication-specific metadata.
+2. `src/<pub-id>/index.*`
+   Publication-specific metadata embedded in the entry-point metadata block.
 
-When the same key exists in both files, the publication-level value from
-`src/<pub-id>/metadata.yaml` takes precedence.
+An optional `src/<pub-id>/metadata.json` file may also be used for
+publication-specific values when keeping metadata outside the entry-point is
+clearer. When the same key exists in both levels, the publication-level value
+takes precedence over `src/metadata.json`.

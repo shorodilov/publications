@@ -1,3 +1,14 @@
+:title: Ввійти в IT
+:subtitle: Універсальний посібник для початківців
+:author: Сергій Городілов
+:keywords:
+  - developer
+  - programming
+  - beginner
+  - guide
+:subject: Practical advice for beginners
+:category: Guide
+:bibliography: refs.bib
 :version: 1.0-rc1
 
 ********

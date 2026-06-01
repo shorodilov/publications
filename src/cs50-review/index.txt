@@ -1,3 +1,16 @@
+:title: CS50 - найкращий онлайн курс для початківців від Гарварда?
+:subtitle: Універсальний посібник для початківців
+:author: Сергій Городілов
+:date: 2025-05-13
+:keywords:
+  - review
+  - cs50
+  - programming
+  - beginner
+  - guide
+:subject: CS50 - Introduction to Computer Science
+:category: Review
+:bibliography: refs.bib
 :abstract: |
   Ця стаття пропонує критичний погляд без прикрас на популярний онлайн-курс
   вступу до програмування CS50 від університету Гарварда. У ній розглядаються
