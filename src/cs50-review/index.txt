@@ -3,7 +3,6 @@
 :date: 2025-05-13
 :subject: CS50 - Introduction to Computer Science
 :category: Review
-:bibliography: refs.bib
 :abstract: |
   Ця стаття пропонує критичний погляд без прикрас на популярний онлайн-курс
   вступу до програмування CS50 від університету Гарварда. У ній розглядаються

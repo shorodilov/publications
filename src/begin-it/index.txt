@@ -2,7 +2,6 @@
 :subtitle: Універсальний посібник для початківців
 :subject: Practical advice for beginners
 :category: Guide
-:bibliography: refs.bib
 :version: 1.0-rc1
 
 ********
