@@ -1,12 +1,6 @@
 :title: CS50 - найкращий онлайн курс для початківців від Гарварда?
 :subtitle: Універсальний посібник для початківців
 :date: 2025-05-13
-:keywords:
-  - review
-  - cs50
-  - programming
-  - beginner
-  - guide
 :subject: CS50 - Introduction to Computer Science
 :category: Review
 :bibliography: refs.bib
