@@ -105,12 +105,10 @@ from separate section files, such as `section/xx-sectiontitle.*`.
 The format of the `index.*` file is defined by its extension.
 Refer to [`pandoc documentation`](https://pandoc.org/MANUAL.html#option--from) to see supported formats.
 
-**src/\<pub-id\>/index.***
-: The preferred location for publication-specific metadata, using an entry-point YAML metadata block.
-Commonly contains `title`, `subtitle`, `date`, bibliography, and other publication-specific values.
-
 **src/\<pub-id\>/metadata.json**
-: Optional publication metadata file for cases where keeping separate publication-specific metadata is clearer.
+: Publication-specific metadata file. Commonly contains `title`, `subtitle`, `date`,
+bibliography, and other publication-specific values. Use this file for entry-point
+formats that do not consume YAML metadata blocks, such as reStructuredText.
 
 Community and Contribution Docs
 ---
@@ -129,10 +127,8 @@ Publication metadata is resolved from these sources:
 1. `src/metadata.json`
    Shared metadata used as defaults for all publications.
 
-2. `src/<pub-id>/index.*`
-   Publication-specific metadata in an entry-point YAML metadata block.
-
-3. `src/<pub-id>/metadata.json`
-   Optional publication-specific metadata for cases where a separate file is clearer.
+2. `src/<pub-id>/metadata.json`
+   Publication-specific metadata. This is required when the entry-point reader does
+   not consume YAML metadata blocks, such as reStructuredText.
 
 When the same key exists at more than one level, the publication-level value takes precedence.
