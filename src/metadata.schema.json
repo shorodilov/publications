@@ -21,6 +21,7 @@
       "type": "string"
     },
     "version": {
+      "description": "The document version",
       "type": "string"
     },
     "subtitle": {
