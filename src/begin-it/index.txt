@@ -1,6 +1,5 @@
 :title: Ввійти в IT
 :subtitle: Універсальний посібник для початківців
-:author: Сергій Городілов
 :keywords:
   - developer
   - programming

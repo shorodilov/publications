@@ -121,15 +121,16 @@ Community and Contribution Docs
 Metadata Resolution
 ---
 
-Publication metadata is resolved from two levels:
+Publication metadata is resolved from multiple levels:
 
 1. `src/metadata.json`
    Shared metadata used as defaults for all publications.
 
-2. `src/<pub-id>/index.*`
+2. `src/<pub-id>/metadata.json`
+   Optional publication-specific metadata kept outside the entry-point.
+
+3. `src/<pub-id>/index.*`
    Publication-specific metadata embedded in the entry-point metadata block.
 
-An optional `src/<pub-id>/metadata.json` file may also be used for
-publication-specific values when keeping metadata outside the entry-point is
-clearer. When the same key exists in both levels, the publication-level value
-takes precedence over `src/metadata.json`.
+Each next level overrides the previous one when the same key is defined more
+than once.
