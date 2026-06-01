@@ -14,7 +14,7 @@
     },
     "author": {
       "description": "The document author(s)",
-      "$ref": "#/$defs/type-person-or-list-person"
+      "$ref": "#/$defs/type-person-list-or-person"
     },
     "date": {
       "description": "The document's publication date",
@@ -35,7 +35,7 @@
     },
     "keywords": {
       "description": "The list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc",
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "subject": {
       "type": "string"
@@ -50,16 +50,24 @@
     },
     "lang": {
       "description": "Identifies the main language of the document using IETF language tags",
-      "examples": [ "en", "en-GB", "uk", "uk-UA" ],
+      "examples": [
+        "en",
+        "en-GB",
+        "uk",
+        "uk-UA"
+      ],
       "type": "string"
     },
     "dir": {
       "description": "The base script direction",
-      "enum": [ "ltr", "rtl" ]
+      "enum": [
+        "ltr",
+        "rtl"
+      ]
     },
     "classoption": {
       "description": "Option for document class, e.g. oneside",
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "documentclass": {
       "enum": [
@@ -75,14 +83,21 @@
     "geometry": {
       "description": "Option for `geometry` package",
       "examples": [
-        [ "margin=1in" ],
-        [ "top=30mm", "left=20mm" ],
-        [ "heightrounded" ]
+        [
+          "margin=1in"
+        ],
+        [
+          "top=30mm",
+          "left=20mm"
+        ],
+        [
+          "heightrounded"
+        ]
       ],
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "hyperrefoptions": {
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "indent": {
       "type": "boolean"
@@ -107,11 +122,18 @@
       "$ref": "#/$defs/margin"
     },
     "pagestyle": {
-      "enum": [ "plain", "empty", "headings" ]
+      "enum": [
+        "plain",
+        "empty",
+        "headings"
+      ]
     },
     "papersize": {
       "description": "Paper size",
-      "examples": [ "letter", "a4" ],
+      "examples": [
+        "letter",
+        "a4"
+      ],
       "type": "string"
     },
     "secnumdepth": {
@@ -123,15 +145,20 @@
     },
     "csquotesoptions": {
       "description": "Options to use with `csquotes` package",
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "babeloptions": {
       "description": "Options to pass to the babel package",
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "fontenc": {
       "description": "Allows font encoding to be specified through `fontenc` package",
-      "examples": [ "T1", "T2A", "T2B", "T3" ],
+      "examples": [
+        "T1",
+        "T2A",
+        "T2B",
+        "T3"
+      ],
       "type": "string"
     },
     "fontfamily": {
@@ -139,11 +166,15 @@
     },
     "fontfamilyoptions": {
       "description": "Options for package used as `fontfamily`",
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "fontsize": {
       "description": "Font size for body text",
-      "examples": [ "10pt", "11pt", "12pt" ],
+      "examples": [
+        "10pt",
+        "11pt",
+        "12pt"
+      ],
       "type": "string"
     },
     "mainfont": {
@@ -198,7 +229,7 @@
       "$ref": "#/$defs/font-map"
     },
     "microtypeoptions": {
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "lof": {
       "description": "List of figures",
@@ -218,7 +249,7 @@
       "type": "integer"
     },
     "biblatexoptions": {
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "biblio-style": {
       "type": "string"
@@ -230,7 +261,7 @@
       "type": "string"
     },
     "bibliography": {
-      "$ref": "#/$defs/type-str-or-list-str"
+      "$ref": "#/$defs/type-str-list-or-str"
     },
     "csl": {
       "type": "string"
@@ -242,39 +273,39 @@
       "type": "boolean"
     },
     "nocite": {
-      "$ref": "#/$defs/type-str-or-list-str"
+      "$ref": "#/$defs/type-str-list-or-str"
     },
     "natbiboptions": {
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     }
   },
   "$defs": {
-    "type-list-str": {
+    "type-str-list": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "type-str-or-list-str": {
+    "type-str-list-or-str": {
       "oneOf": [
         {
-          "type": "string"
+          "$ref": "#/$defs/type-str-list"
         },
         {
-          "$ref": "#/$defs/type-list-str"
+          "type": "string"
         }
       ]
     },
-    "type-person-or-list-person": {
+    "type-person-list-or-person": {
       "oneOf": [
-        {
-          "$ref": "#/$defs/person"
-        },
         {
           "type": "array",
           "items": {
             "$ref": "#/$defs/person"
           }
+        },
+        {
+          "$ref": "#/$defs/person"
         }
       ]
     },
@@ -286,7 +317,9 @@
         {
           "$comment": "author object requires custom template",
           "type": "object",
-          "required": [ "name" ],
+          "required": [
+            "name"
+          ],
           "properties": {
             "name": {
               "type": "string"
@@ -305,7 +338,7 @@
       "type": "string"
     },
     "font-list": {
-      "$ref": "#/$defs/type-list-str"
+      "$ref": "#/$defs/type-str-list"
     },
     "font-map": {
       "examples": [
@@ -320,17 +353,7 @@
       }
     },
     "font-options": {
-      "oneOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
+      "$ref": "#/$defs/type-str-list-or-str"
     }
   }
 }
