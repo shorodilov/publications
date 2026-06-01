@@ -20,11 +20,14 @@ Repository Structure
 Metadata
 ---
 
-- `src/metadata.yaml` contains shared metadata used as defaults for all
+- `src/metadata.json` contains shared metadata used as defaults for all
   publications.
-- `src/<pub-id>/metadata.yaml` contains publication-specific metadata.
-- When the same key exists in both files, `src/<pub-id>/metadata.yaml`
-  overrides `src/metadata.yaml`.
+- Publication-specific metadata should normally live in the metadata block at
+  the top of `src/<pub-id>/index.*`.
+- `src/<pub-id>/metadata.json` is optional when keeping publication-specific
+  metadata outside the entry-point is clearer.
+- When the same key exists in both levels, publication-specific metadata
+  overrides `src/metadata.json`.
 - Do not remove license, source, author, date, or attribution metadata unless
   explicitly asked and the reason is clear.
 - Preserve existing metadata structure unless a requested change requires a

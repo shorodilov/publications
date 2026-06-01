@@ -1,0 +1,21 @@
+{
+  "author": "Сергій Городілов",
+  "lang": "uk",
+  "dir": "ltr",
+  "mainfont": "DejaVu Serif",
+  "monofont": "DejaVu Sans Mono",
+  "fontsize": "12pt",
+  "documentclass": "article",
+  "geometry": [
+    "margin=1in",
+    "a4paper"
+  ],
+  "papersize": "a4",
+  "toc": true,
+  "toc-depth": 3,
+  "csl": "https://raw.githubusercontent.com/citation-style-language/styles/master/ieee.csl",
+  "reference-section-title": "Посилання",
+  "link-citations": true,
+  "link-bibliography": true,
+  "nocite": "@*"
+}

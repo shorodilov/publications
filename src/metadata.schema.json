@@ -20,6 +20,10 @@
       "description": "The document's publication date",
       "type": "string"
     },
+    "version": {
+      "description": "The document version",
+      "type": "string"
+    },
     "subtitle": {
       "type": "string"
     },
@@ -222,7 +226,22 @@
     "biblio-title": {
       "type": "string"
     },
+    "reference-section-title": {
+      "type": "string"
+    },
     "bibliography": {
+      "$ref": "#/$defs/type-str-or-list-str"
+    },
+    "csl": {
+      "type": "string"
+    },
+    "link-citations": {
+      "type": "boolean"
+    },
+    "link-bibliography": {
+      "type": "boolean"
+    },
+    "nocite": {
       "$ref": "#/$defs/type-str-or-list-str"
     },
     "natbiboptions": {

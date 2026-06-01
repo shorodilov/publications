@@ -1,3 +1,7 @@
+:title: Ввійти в IT
+:subtitle: Універсальний посібник для початківців
+:subject: Practical advice for beginners
+:category: Guide
 :version: 1.0-rc1
 
 ********
