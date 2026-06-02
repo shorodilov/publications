@@ -40,3 +40,24 @@ recommends `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`,
 
 Footers other than `BREAKING CHANGE: <description>` may be provided and
 follow a convention similar to Git trailer format.
+
+## Commit author for AI-assisted commits
+
+When an AI agent or AI-assisted tool creates a commit, use a Git author
+identity that names the model or tool and includes an email address. Keep
+the author string in this form:
+
+```plain
+<model> <email>
+```
+
+Examples:
+
+```plain
+GPT-5.5 <noreply@openai.com>
+Copilot {model} <noreply@github.com>
+```
+
+Use the specific model or tool identity that produced the commit. Do not
+replace the AI author with a human maintainer unless that maintainer is
+actually the author of the commit.
