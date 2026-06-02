@@ -24,6 +24,19 @@
       "description": "The document version",
       "type": "string"
     },
+    "publication": {
+      "description": "Repository-local publication metadata that is not part of standard Pandoc document metadata",
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/publication-source"
+        },
+        "archive": {
+          "$ref": "#/$defs/publication-archive"
+        }
+      },
+      "additionalProperties": false
+    },
     "subtitle": {
       "type": "string"
     },
@@ -354,6 +367,41 @@
     },
     "font-options": {
       "$ref": "#/$defs/type-str-list-or-str"
+    },
+    "publication-source": {
+      "description": "Original source provenance for an imported publication",
+      "type": "object",
+      "required": [
+        "repository"
+      ],
+      "properties": {
+        "repository": {
+          "description": "Original source repository URL before import into this archive",
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "description": "Original source publication version, when known",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "publication-archive": {
+      "description": "Destination archive metadata for this repository, separate from original source provenance",
+      "type": "object",
+      "properties": {
+        "repository": {
+          "description": "Destination archive repository URL, if it must be recorded explicitly",
+          "type": "string",
+          "format": "uri"
+        },
+        "path": {
+          "description": "Publication path inside the destination archive repository",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

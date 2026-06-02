@@ -1,4 +1,9 @@
 {
+  "publication": {
+    "source": {
+      "repository": "https://github.com/shorodilov/article-02.git"
+    }
+  },
   "bibliography": "refs.bib",
   "keywords": [
     "developer",

@@ -134,3 +134,27 @@ Publication metadata is resolved from multiple levels:
 
 Each next level overrides the previous one when the same key is defined more
 than once.
+
+Source and Provenance Metadata
+---
+
+Imported publications should preserve original source provenance as active,
+machine-readable metadata under `publication.source`.
+
+Use `publication.source.repository` for the original source repository that was
+imported into this archive. Do not replace it with this destination archive
+repository. If destination/archive metadata must be recorded explicitly, use a
+separate `publication.archive` block instead.
+
+Example:
+
+```json
+{
+  "publication": {
+    "source": {
+      "repository": "https://github.com/example/source-publication.git",
+      "version": "1.0"
+    }
+  }
+}
+```
