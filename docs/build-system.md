@@ -112,8 +112,8 @@ The expected repository layout is:
 treeView-beta
     "Taskfile.yml"
     "docs/"
-    "metadata.schema.json"
     "src/"
+        "metadata.schema.json"
         "<standard-publication>/"
             "metadata.yaml"
             "index.md"
@@ -191,6 +191,8 @@ When run from inside a custom publication directory, the publication Taskfile ha
 Always builds all publications from the repository root context.
 
 This task must not depend on the user's current working directory.
+
+Because Task uses a publication-local Taskfile before walking up to the repository root, repository-wide tasks must be invoked from the root Taskfile explicitly when the current directory might contain a publication Taskfile. Use the repository root as the working directory, or select the root Taskfile with `task --dir <repo-root> build:all` or `task --taskfile <repo-root>/Taskfile.yml build:all`.
 
 ### `task build:pub PUB=<publication-id>`
 
@@ -276,8 +278,12 @@ builds all publications
 
 ### Build all publications explicitly
 
+Run repository-wide tasks from the repository root, or explicitly select the root Taskfile when invoking them from another directory.
+
 ```sh
 task build:all
+# or, from another directory:
+task --dir <repo-root> build:all
 ```
 
 Expected behavior:
@@ -358,7 +364,7 @@ vars:
   SRC_DIR: src
   BUILD_DIR: build
   DIST_DIR: dist
-  METADATA_SCHEMA: metadata.schema.json
+  METADATA_SCHEMA: src/metadata.schema.json
 
 tasks:
   default:
