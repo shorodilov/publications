@@ -70,6 +70,10 @@ Adaptations and Attribution
 AI Editing Rules
 ---
 
+- When an AI agent or AI-assisted tool creates a commit, set the Git author to
+  the tool or model identity in the form `<model> <email@domain>`. Examples include
+  `GPT-5.5 <noreply@openai.com>` and
+  `Copilot {model} <noreply@github.com>`.
 - Prefer small, reviewable changes.
 - Do not make broad style rewrites, tone changes, or language normalization
   without explicit instruction.

@@ -117,6 +117,11 @@ Before opening a pull request, check that:
 
 Use Conventional Commits for commit messages.
 
+For commits created by an AI agent or AI-assisted tool, set the Git author
+to the model or tool identity in the form `<model> <email@domain>`, such as
+`GPT-5.5 <noreply@openai.com>` or
+`Copilot {model} <noreply@github.com>`.
+
 The repository includes a separate commit-message guide in
 `COMMIT_MESSAGE.md`. Follow that guide when preparing commits.
 
