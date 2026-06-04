@@ -93,6 +93,13 @@ When `task` is run from a publication directory:
 - if the publication directory contains a supported Taskfile, that local Taskfile is used;
 - otherwise, Task walks up the directory tree and falls back to the root Taskfile.
 
+Repository-wide tasks must select the root Taskfile explicitly unless the command is run from the repository root. This avoids accidentally invoking a publication-specific Taskfile when the current directory is a custom publication. Use one of these forms for repository-wide tasks from subdirectories:
+
+```sh
+task --dir <repo-root> <task-name>
+task --taskfile <repo-root>/Taskfile.yml <task-name>
+```
+
 This gives the repository the following behavior:
 
 ```plain
@@ -112,8 +119,9 @@ The expected repository layout is:
 treeView-beta
     "Taskfile.yml"
     "docs/"
-    "metadata.schema.json"
     "src/"
+        "metadata.schema.json"
+        "metadata.yaml"
         "<standard-publication>/"
             "metadata.yaml"
             "index.md"
@@ -190,11 +198,15 @@ When run from inside a custom publication directory, the publication Taskfile ha
 
 Always builds all publications from the repository root context.
 
+This task must be invoked through the root Taskfile. From outside the repository root, select the root explicitly with `--dir <repo-root>` or `--taskfile <repo-root>/Taskfile.yml`.
+
 This task must not depend on the user's current working directory.
 
 ### `task build:pub PUB=<publication-id>`
 
 Builds exactly one publication by ID.
+
+This task must be invoked through the root Taskfile. From outside the repository root, select the root explicitly with `--dir <repo-root>` or `--taskfile <repo-root>/Taskfile.yml`.
 
 This task is useful for CI, scripts, and explicit local builds where relying on the current working directory would be less clear.
 
@@ -276,28 +288,44 @@ builds all publications
 
 ### Build all publications explicitly
 
+From the repository root:
+
 ```sh
 task build:all
+```
+
+From another directory, including a custom publication directory:
+
+```sh
+task --dir <repo-root> build:all
 ```
 
 Expected behavior:
 
 ```plain
-uses ./Taskfile.yml
+uses <repo-root>/Taskfile.yml
 builds all publications
 ignores current publication context
 ```
 
 ### Build one publication explicitly
 
+From the repository root:
+
 ```sh
 task build:pub PUB=<publication-id>
+```
+
+From another directory, including a custom publication directory:
+
+```sh
+task --dir <repo-root> build:pub PUB=<publication-id>
 ```
 
 Expected behavior:
 
 ```plain
-uses ./Taskfile.yml
+uses <repo-root>/Taskfile.yml
 builds only src/<publication-id>
 ```
 
@@ -358,7 +386,7 @@ vars:
   SRC_DIR: src
   BUILD_DIR: build
   DIST_DIR: dist
-  METADATA_SCHEMA: metadata.schema.json
+  METADATA_SCHEMA: src/metadata.schema.json
 
 tasks:
   default:
