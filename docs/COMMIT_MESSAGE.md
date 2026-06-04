@@ -48,7 +48,7 @@ identity that names the model or tool and includes an email address. Keep
 the author string in this form:
 
 ```plain
-<model> <email>
+<model> <email@domain>
 ```
 
 Examples:
