@@ -202,6 +202,8 @@ This task must be invoked through the root Taskfile. From outside the repository
 
 This task must not depend on the user's current working directory.
 
+Because Task uses a publication-local Taskfile before walking up to the repository root, repository-wide tasks must be invoked from the root Taskfile explicitly when the current directory might contain a publication Taskfile. Use the repository root as the working directory, or select the root Taskfile with `task --dir <repo-root> build:all` or `task --taskfile <repo-root>/Taskfile.yml build:all`.
+
 ### `task build:pub PUB=<publication-id>`
 
 Builds exactly one publication by ID.
